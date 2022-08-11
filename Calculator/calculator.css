@@ -1,0 +1,32 @@
+*{margin:0; padding:0}
+
+
+.full_width{
+	width:100%;
+	display:block;
+}
+.display_here{
+	border: 5px solid sandybrown;
+	border-radius: 15px;
+	box-shadow: 0px 10px 15px silver;
+	padding:10px;
+}
+.gazi_calculator{
+	background-color: #ddd;
+}
+.gazi_calculator input[type="text"]{
+	margin-top: 15px;
+	width:60%;
+	height: 60px;
+	border-radius: 10px;
+	font-size: 25pt;
+	text-align: right;
+}
+.gazi_calculator input[type="button"]{
+	width:90px;
+	height: 60px;
+	font-size: 25pt;
+}
+.f_button{
+	background-color: sandybrown;
+}
