@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> User Result </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading">
+               <h1 class="text-center"> User Input Result </h1>
+            </div>
+        </div>
+    </div>
+<br>    
+    <div class="container">
+    
+    <div class="d-flex justify-content-center ">
+        <div class="col-7 eve_form">
+
+            <table class="col-12">
+                <tr>
+                    <td class="p-2 text-center" colspan="2"><h3> Name : <span id="rName"></span> </h3></td>
+                </tr>
+                <tr>
+                    <td class="p-2"><h3 > Your Phone Number</h3></td>
+                    <td> <h3 id="rPhone"></h3></td>
+                </tr>
+                <tr>
+                    <td class="p-2"><h3 > Location </h3></td>
+                    <td> <h3 id="rLocation"></h3></td>
+                </tr>
+
+                <tr>
+                    <td class="p-2"><h3 > Gender </h3></td>
+                    <td> <h3 id="rGender"></h3></td>
+                </tr>
+                <tr>
+                    <td class="p-2"><h3 > Remarks </h3></td>
+                    <td> <h3 id="rTextArea"> </h3></td>
+                </tr>
+                <tr>
+                    <td class="p-2"><h3 > Subject </h3></td>
+                    <td> <h3 id="rSub"> </h3></td>
+                </tr>
+
+
+
+            </table>
+            
+            
+        </div>   <!--- Col-7 --->
+    </div> <!--- d-flex --->
+</div>     <!--- Container --->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+     document.getElementById("rName").innerHTML = localStorage.getItem("takeName");
+     document.getElementById("rPhone").innerHTML = localStorage.getItem("takePhone");
+     document.getElementById("rLocation").innerHTML = localStorage.getItem("location");
+     document.getElementById("rGender").innerHTML = localStorage.getItem("genderIs");
+     document.getElementById("rTextArea").innerHTML = localStorage.getItem("takeText");
+     document.getElementById("rSub").innerHTML = localStorage.getItem("courseToSting");
+    
+    </script>
+</body>
+</html>

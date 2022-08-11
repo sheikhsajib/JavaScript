@@ -1,0 +1,18 @@
+body{
+    background-color: blanchedalmond;
+}
+
+.heading{
+    background-color: azure;
+    border: 10px solid #55555555;
+    box-shadow: 0px 5px 25px #555;
+    border-radius: 22px;
+}
+.eve_form{
+    box-shadow: 0px 5px 25px #555;
+    border-radius: 22px;
+}
+
+.gender_radio{
+    font-size:15pt;
+}
