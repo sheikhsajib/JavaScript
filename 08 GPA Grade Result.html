@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title> Namta of any Number </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="jsStyle.css"/>
+</head>
+<body>
+<div class="full_width">
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center p-4 m-2 display_here"> GPA Result </h1>
+		</div>	<!-- Row -->
+	</div>	<!-- Container div -->
+</div>	<!-- Full Container div -->
+
+<div class="container">
+	<div class="row">
+		<div class="d-flex justify-content-center">
+			<div class="col-8 mt-4 p-3 display_here"> 
+				<div class="text-center"> 
+					<form action="">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="studantName" placeholder="Student Name" >
+							<label> Name of Student  </label>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="bangla" placeholder="Out of 100" oninput="in100()">
+									<label> Bengali  </label>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="math" placeholder="Out of 100" oninput="in100()">
+									<label> Math  </label>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="english" placeholder="Out of 100" oninput="in100()">
+									<label> Englsih  </label>
+								</div>
+							</div>
+						</div>
+						<p class="text-primary text-center"> Out of 100 </p>
+						<p id="msgMark" class="text-danger text-center"> </p>
+						<div class="form-floating mb-3">
+							<input type="button" value="GPA RESULT" class="btn btn-primary btn-lg mt-2" onclick="studentResult()">
+						</div>
+					</form>
+				</div>	
+				
+				<script> // Show Namta in a table
+				function in100(){
+				let bangla = parseFloat(document.getElementById("bangla").value);
+				let math = parseFloat(document.getElementById("math").value);
+				let english = parseFloat(document.getElementById("english").value);
+					
+				
+				if(bangla <100 || math <100 || english < 100 ){
+					document.getElementById("msgMark").innerHTML= "Marks Looks Good" ;
+				}
+				
+				if(bangla>100 || math >100 || english >100 ){
+					document.getElementById("msgMark").innerHTML= "Your Mark goes over 100" ;
+					
+				}
+				}
+
+
+				function studentResult(){
+				// take input from the user
+				let name = document.getElementById("studantName").value;
+				let bangla = parseFloat(document.getElementById("bangla").value);
+				let math = parseFloat(document.getElementById("math").value);
+				let english = parseFloat(document.getElementById("english").value);
+				let average = parseInt((bangla + math + english)/3) ;
+				//number Validation
+				if(name.length<4){
+					document.getElementById("msgMark").innerHTML= "Type your name" ;
+					return false;
+				}
+				if(bangla == null || math == null || english == null){
+					document.getElementById("msgMark").innerHTML= "Mark Cannot be Empty" ;
+					return false;
+					// this code not working. Input type Number Cannot Be empty.
+				}
+				if(bangla>100 || math >100 || english >100){
+					document.getElementById("msgMark").innerHTML= "Mark out of 100" ;
+					return false;
+				}
+				if( average >= 80){
+					document.getElementById('nameStudent').innerHTML = "Hey, "+ name;
+					document.getElementById('gpaResult').innerHTML = "Congratulations You have got A+ Grade";
+					document.getElementById("msgMark").innerHTML= "" ;
+				}
+				else if( average >= 70){
+					document.getElementById('nameStudent').innerHTML = "Hey, "+ name;
+					document.getElementById('gpaResult').innerHTML = "It's Good You have got A Grade";
+					document.getElementById("msgMark").innerHTML= "" ;
+				}
+				else if( average >= 60){
+					document.getElementById('nameStudent').innerHTML = "Hey, "+ name;
+					document.getElementById('gpaResult').innerHTML = " You have got B Grade Try Hard";
+					document.getElementById("msgMark").innerHTML= "" ;
+				}
+				if(bangla<60 || math<60 || english<60){
+					document.getElementById('nameStudent').innerHTML = "Hey, "+ name;
+					document.getElementById('gpaResult').innerHTML = "Oooppss, Failed";
+					document.getElementById("msgMark").innerHTML= "" ;
+					if(average>=60){
+						document.getElementById('gpaResult').innerHTML = "Oooppss, Failed.<br> Though your average mark is "+ average;
+						document.getElementById("msgMark").innerHTML= "" ;
+					}
+
+				}
+
+				}
+				</script>
+
+				<h2 class="text-center">
+					<span id="nameStudent"> </span>
+				</h2>
+				<div class="text-center display-6">
+					<span id="gpaResult"></span> <br>
+
+
+
+					<table class='table table-bordered namtaTable' id="rowTable">
+					
+					</table>
+				</div>
+			</div>
+		</div> 	<!-- d-flex Justify-content-center -->
+
+	</div>
+</div>
+
+
+
+<br><br><br>
+
+<footer class="text-center py-5">
+	coded by SHIEKH SAJIB
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

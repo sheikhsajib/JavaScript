@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title> Compound Interest vs General Interest </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="jsStyle.css"/>
+</head>
+<body>
+<div class="full_width">
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center p-4 m-2 display_here"> Compund Interest vs General Interest </h1>
+		</div>	<!-- Row -->
+	</div>	<!-- Container div -->
+</div>	<!-- Full Container div -->
+
+<div class="container">
+	<div class="row">
+		<div class="d-flex justify-content-center">
+			<div class="col-8 mt-4 p-3 display_here"> 
+				<div class="text-center"> 
+					<form action="">
+						
+						<div class="row">
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="inCap" placeholder="Out of 100" >
+									<label> Investment Capital </label>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="years" placeholder="Out of 100" >
+									<label> Time of Years </label>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" id="rates" placeholder="Out of 100">
+									<label> Interest Rates </label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-floating mb-3">
+							<input type="button" value="Total Money" class="btn btn-primary btn-lg mt-2" onclick="finalMoney()">
+						</div>
+						<p id="result" class="display-6 text-info text-center"> </p>
+					</form>
+				</div>	
+				
+				<script> // Show Namta in a table
+				function finalMoney(){ 
+				let p = parseFloat(document.getElementById("inCap").value);
+				let n = parseFloat(document.getElementById("years").value);
+				let r = parseFloat(document.getElementById("rates").value);
+				
+				// A = P(1+r/100)^n; Compound Interest Formula;
+				// P = P
+				let A =parseFloat(p*( Math.pow((1+r/100),n))).toFixed(3); 
+				//let A = p*(1+r/100); 
+				
+				let I = parseFloat((p*n*r/100)+p).toFixed(3);
+				document.getElementById("result").innerHTML= 
+				" Where Capital is "+p+ "<br> Time is : " +n+ " years <br> and Intersets rate is :"+r+ " <br> Compund Total is: " + A + "<br> General Total is: " + I + " <br> Deference Between two system is : " + (A-I).toFixed(2);
+				}
+
+				</script>
+
+			</div>
+		</div> 	<!-- d-flex Justify-content-center -->
+
+	</div>
+</div>
+
+
+
+<br><br><br>
+
+<footer class="text-center py-5">
+	coded by SHIEKH SAJIB
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
